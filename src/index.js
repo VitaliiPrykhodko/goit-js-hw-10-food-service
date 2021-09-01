@@ -1,3 +1,4 @@
+import { even } from 'prelude-ls';
 import menu from './menu/menu.json';
 import template from './template/template.hbs';
 
@@ -14,16 +15,17 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-body.classList.add(Theme.LIGHT)
+
+body.classList.add('light-theme')
 body.classList.add(localStorage.getItem('Theme'));
 
-   if (body.classList.contains('dark-theme')) {
-    onInput.setAttribute('checked', 'true');
-}
+    if (body.classList.contains('dark-theme')) {
+        onInput.setAttribute('checked', 'true');
+    }
 
-else if (body.classList.contains('light-theme')) {
-    onInput.removeAttribute('checked');
-}
+    else if (body.classList.contains('light-theme')) {
+        onInput.removeAttribute('checked');
+    }
 
    onInput.addEventListener('change', changeTheme)
 
